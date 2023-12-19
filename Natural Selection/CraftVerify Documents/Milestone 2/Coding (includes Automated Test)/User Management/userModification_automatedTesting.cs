@@ -6,6 +6,7 @@ using System.Text;
 public class UserModificationTests
 {
     [TestMethod]
+    // Test method to check if updating a user profile with valid bio and photo returns true
     public void UpdateUserProfile_ValidBioAndPhoto_ReturnsTrue()
     {
         // Arrange
@@ -21,6 +22,7 @@ public class UserModificationTests
     }
 
     [TestMethod]
+    // Test method to check if updating a user profile with an invalid bio returns false
     public void UpdateUserProfile_InvalidBio_ReturnsFalse()
     {
         // Arrange
@@ -36,6 +38,7 @@ public class UserModificationTests
     }
 
     [TestMethod]
+    // Test method to check if updating a user profile with valid bio and PNG photo returns true
     public void UpdateUserProfile_ValidBioAndPNGPhoto_ReturnsTrue()
     {
         // Arrange
@@ -51,6 +54,7 @@ public class UserModificationTests
     }
 
     [TestMethod]
+    // Test method to check if updating a user profile with valid bio and invalid PNG photo returns false
     public void UpdateUserProfile_ValidBioAndInvalidPNGPhoto_ReturnsFalse()
     {
         // Arrange
@@ -67,6 +71,7 @@ public class UserModificationTests
 
 
     [TestMethod]
+    // Test method to check if updating a user profile with valid bio and HEIF photo returns true
     public void UpdateUserProfile_ValidBioAndHEIFPhoto_ReturnsTrue()
     {
         // Arrange
@@ -82,6 +87,7 @@ public class UserModificationTests
     }
 
     [TestMethod]
+    // Test method to check if updating a user profile with valid bio and invalid HEIF photo returns false
     public void UpdateUserProfile_ValidBioAndInvalidHEIFPhoto_ReturnsFalse()
     {
         // Arrange
@@ -97,6 +103,7 @@ public class UserModificationTests
     }
 
     [TestMethod]
+    // Test method to check if updating a user profile with invalid photo returns false
     public void UpdateUserProfile_InvalidPhoto_ReturnsFalse()
     {
         // Arrange
@@ -112,6 +119,7 @@ public class UserModificationTests
     }
 
     [TestMethod]
+    // Test method to validate a bio with less than 200 words
     public void ValidateBio_LessThan200Words_ReturnsTrue()
     {
         // Arrange
@@ -126,6 +134,7 @@ public class UserModificationTests
     }
 
     [TestMethod]
+    // Test method to validate a bio with more than 200 words
     public void ValidateBio_MoreThan200Words_ReturnsFalse()
     {
         // Arrange
@@ -139,8 +148,8 @@ public class UserModificationTests
         Assert.IsFalse(result);
     }
 
-    // Add these methods to the UserModificationTests class
     [TestMethod]
+    // Test method to check if a valid JPEG photo is correctly validated
     public void ValidateProfilePhoto_ValidJPEG_ReturnsTrue()
     {
         // Arrange
@@ -155,6 +164,7 @@ public class UserModificationTests
     }
 
     [TestMethod]
+    // Test method to check if a photo exceeding the size limit is correctly identified as invalid
     public void ValidateProfilePhoto_ExceedsSizeLimit_ReturnsFalse()
     {
         // Arrange
@@ -169,6 +179,7 @@ public class UserModificationTests
     }
 
     [TestMethod]
+    // Test method to check if saving profile changes to the database with a successful update returns true
     public void SaveProfileChangesToDatabase_SuccessfulUpdate_ReturnsTrue()
     {
         // Arrange
@@ -184,6 +195,7 @@ public class UserModificationTests
     }
 
     [TestMethod]
+    
     public void SaveProfileChangesToDatabase_UnsuccessfulUpdate_ReturnsFalse()
     {
         // Arrange

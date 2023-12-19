@@ -1,3 +1,4 @@
+// Interface defining the contract for profile modification operations.
 public interface IProfileModification
 {
     bool UpdateUserProfile(string userId, string newBio, byte[] newProfilePhoto);
@@ -7,12 +8,17 @@ public interface IProfileModification
     void LogProfileUpdateActivity(string userId, string updateDetails);
 }
 
+// Class implementing profile modification functionalities.
 public class UserModification : IProfileModification
 {
+    // Unique identifier of the user.
     public string UserID { get; set; }
+    // URL or path of the user's profile picture.
     public string ProfilePicture { get; set; }
+    // Biography or description of the user.
     public string Bio { get; set; }
 
+    // Implementation of updating the user's profile.
     public bool UpdateUserProfile(string userId, string newBio, byte[] newProfilePhoto)
     {
         if (!ValidateBio(newBio) || !ValidateProfilePhoto(newProfilePhoto))
@@ -31,6 +37,7 @@ public class UserModification : IProfileModification
         return true;
     }
 
+    // Implementation of bio validation.
     public bool ValidateBio(string newBio)
     {
         // Check bio length and content
@@ -44,6 +51,7 @@ public class UserModification : IProfileModification
         return isValid;
     }
 
+    // Implementation of profile photo validation.
     public bool ValidateProfilePhoto(byte[] newProfilePhoto)
     {
         // Check photo format and size
@@ -79,6 +87,7 @@ public class UserModification : IProfileModification
         return isValid;
     }
 
+    // Implementation of saving profile changes to the database.
     public bool SaveProfileChangesToDatabase(string userId, string updatedProfileData)
     {
         bool updateSuccess = false;
@@ -119,6 +128,7 @@ public class UserModification : IProfileModification
         return updateSuccess;
     }
 
+    // Implementation of logging profile update activities.
     public void LogProfileUpdateActivity(string userId, string updateDetails)
     {
         // Add logic to log the update activity
