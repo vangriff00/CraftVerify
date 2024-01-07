@@ -11,6 +11,6 @@ public class MYClaimsPrincipal : ClaimsPrincipal
     public MYClaimsPrincipal()
     {
         Claims = ClaimsPrincipal.Claims;
-        current = 
+        current = MYClaimsPrincipal;
     }
 }

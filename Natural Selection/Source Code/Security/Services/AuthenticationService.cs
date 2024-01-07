@@ -87,29 +87,45 @@ public class AuthenticationService : IRoleAuthenticator
             return false;
         }
     }
+
     private bool IsAlreadyAuthenticated(string userIdentity)
     {
-        string connection_string = 'Server=localhost;Database=CraftVerify;Trusted_Connection=True;";
-        using (SqlConnection connection = new SqlConnection(connection_string))
+        if (string.IsNullOrWhiteSpace(userIdentity))
         {
-            connection.Open();
+            _logger.LogError("UserIdentity is null or whitespace.");
+            return false;
+        }
 
-            string queru = "SELECT identity FROM claims_principal WHERE userIdentity == identity";
-            using (SqlCommand command = new SqlCommand(query, connection))
+        try
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                command.Parameters.AddWithValue("@userIdentity", userIdentity);
-                object result = command.ExecuteScalar();
+                connection.Open();
+                string query = "SELECT COUNT(1) FROM claims_principal WHERE identity = @userIdentity";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@userIdentity", userIdentity);
+                    int result = Convert.ToInt32(command.ExecuteScalar());
 
-                if (result != null && Convert.ToInt32(result) == 1)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
+                    bool isAuthenticated = result > 0;
+                    if (isAuthenticated)
+                    {
+                        _logger.LogInformation("User {UserIdentity} is already authenticated.", userIdentity);
+                    }
+                    else
+                    {
+                        _logger.LogInformation("User {UserIdentity} is not authenticated.", userIdentity);
+                    }
+
+                    return isAuthenticated;
                 }
             }
-            
+        }
+        catch (Exception ex)
+        {
+            // Log the exception
+            _logger.LogError(ex, "An error occurred while checking if user {UserIdentity} is authenticated.", userIdentity);
+            return false;
         }
     }
 }
