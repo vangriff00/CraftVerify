@@ -3,6 +3,6 @@
     public interface IWriteOnlyDAO
     {
 
-        int InsertAttribute(string connString, string sqlcommand);
+        public int InsertAttribute(string connString, string sqlcommand);
     }
 }

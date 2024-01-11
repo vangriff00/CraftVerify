@@ -42,6 +42,7 @@ namespace DataAccessLibraryCraftVerify
 
         public string GetAttribute(string connString, string sqlcommand)
         {
+            #region Validate arguments
             if (connString == null)
             {
                 throw new ArgumentNullException();
@@ -50,6 +51,7 @@ namespace DataAccessLibraryCraftVerify
             {
                 throw new ArgumentNullException();
             }
+            #endregion
 
             int rowsaffected = 0;
             using (MySqlConnection connection = new MySqlConnection(connString))

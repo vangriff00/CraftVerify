@@ -1,9 +1,7 @@
-﻿//dotnet add package MySql.Data
-
-namespace DataAccessLibraryCraftVerify
+﻿namespace DataAccessLibraryCraftVerify
 {
     public interface IReadOnlyDAO
     {
-        string GetAttribute(string connString, string sqlcommand);
+        public string GetAttribute(string connString, string sqlcommand);
     }
 }
