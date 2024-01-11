@@ -1,13 +1,77 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Data.SqlClient;
 
 namespace DataAccessLibraryCraftVerify
 {
-    public class SQLServerDAO
+    public class SQLServerDAO : IReadOnlyDAO, IWriteOnlyDAO
     {
+        public int InsertAttribute(string connString, string sqlcommand)
+        {
+            if (connString == null)
+            {
+                throw new ArgumentNullException();
+            }
+            if (sqlcommand == null)
+            {
+                throw new ArgumentNullException();
+            }
 
+            int rowsaffected = 0;
+            using (SqlConnection connection = new SqlConnection(connString))
+            {
+                connection.Open();
+                using (var transaction = connection.BeginTransaction(System.Data.IsolationLevel.ReadCommitted))
+                {
+                    using (SqlCommand command = new SqlCommand(sqlcommand, connection, transaction))
+                    {
+                        try
+                        {
+                            var read = command.ExecuteReader();
+                        }
+                        catch
+                        {
+                            transaction.Rollback();
+                            throw;
+                        }
+                    }
+                }
+
+            }
+            return rowsaffected;
+        }
+
+        public string GetAttribute(string connString, string sqlcommand)
+        {
+            if (connString == null)
+            {
+                throw new ArgumentNullException();
+            }
+            if (sqlcommand == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            int rowsaffected = 0;
+            using (SqlConnection connection = new SqlConnection(connString))
+            {
+                connection.Open();
+                using (var transaction = connection.BeginTransaction(System.Data.IsolationLevel.ReadCommitted))
+                {
+                    using (SqlCommand command = new SqlCommand(sqlcommand, connection, transaction))
+                    {
+                        try
+                        {
+                            var read = command.ExecuteReader();
+                        }
+                        catch
+                        {
+                            transaction.Rollback();
+                            throw;
+                        }
+                    }
+                }
+
+            }
+            return "Shit";
+        }
     }
 }

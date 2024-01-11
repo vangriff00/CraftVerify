@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DNsa1sOZeWpevqQPont3XTEQgalMQRo0X5UxCFa7D/HK1J3+d7THiGv7fzYFZDY42Ij1i2CyeHyYk9A7FFmtkw==",
+  "dgSpecHash": "t6kAcLRTk1ravgwgnOCn07S7GN5QY1GV6c+jPXw3O8Mhg7+W9ShVNWv8Soe/LAyyiFXrN9Vd2ehCCy5LKof/iQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kamer\\Documents\\GitHub\\CraftVerify\\Natural Selection\\Source Code\\DataAccess\\DataAccessLibraryCraftVerify.csproj",
+  "projectFilePath": "C:\\Users\\kamer\\OneDrive\\Documents\\GitHub\\CraftVerify\\Natural Selection\\Source Code\\DataAccess\\DataAccessLibraryCraftVerify.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kamer\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\kamer\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
@@ -136,7 +136,10 @@
     "C:\\Users\\kamer\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\kamer\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\kamer\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\kamer\\.nuget\\packages\\zstdsharp.port\\0.7.1\\zstdsharp.port.0.7.1.nupkg.sha512"
+    "C:\\Users\\kamer\\.nuget\\packages\\zstdsharp.port\\0.7.1\\zstdsharp.port.0.7.1.nupkg.sha512",
+    "C:\\Users\\kamer\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.23\\microsoft.windowsdesktop.app.ref.6.0.23.nupkg.sha512",
+    "C:\\Users\\kamer\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.23\\microsoft.netcore.app.ref.6.0.23.nupkg.sha512",
+    "C:\\Users\\kamer\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.23\\microsoft.aspnetcore.app.ref.6.0.23.nupkg.sha512"
   ],
   "logs": []
 }
