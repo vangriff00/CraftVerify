@@ -1,0 +1,5 @@
+C:\Users\kamer\Documents\GitHub\CraftVerify\Natural Selection\Source Code\DataAccess\obj\Debug\net6.0\DataAccessLibraryCraftVerify.csproj.AssemblyReference.cache
+C:\Users\kamer\Documents\GitHub\CraftVerify\Natural Selection\Source Code\DataAccess\obj\Debug\net6.0\DataAccessLibraryCraftVerify.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kamer\Documents\GitHub\CraftVerify\Natural Selection\Source Code\DataAccess\obj\Debug\net6.0\DataAccessLibraryCraftVerify.AssemblyInfoInputs.cache
+C:\Users\kamer\Documents\GitHub\CraftVerify\Natural Selection\Source Code\DataAccess\obj\Debug\net6.0\DataAccessLibraryCraftVerify.AssemblyInfo.cs
+C:\Users\kamer\Documents\GitHub\CraftVerify\Natural Selection\Source Code\DataAccess\obj\Debug\net6.0\DataAccessLibraryCraftVerify.csproj.CoreCompileInputs.cache
