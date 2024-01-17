@@ -25,7 +25,7 @@ namespace DataAccessLibraryCraftVerify
                     {
                         try
                         {
-                            var read = command.ExecuteReader();
+                            rowsaffected += command.ExecuteNonQuery();
                         }
                         catch
                         {
@@ -61,6 +61,7 @@ namespace DataAccessLibraryCraftVerify
                         try
                         {
                             var read = command.ExecuteReader();
+                            transaction.Commit();
                         }
                         catch
                         {

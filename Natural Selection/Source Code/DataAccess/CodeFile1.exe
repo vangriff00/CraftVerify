@@ -1,0 +1,6 @@
+﻿using DataAccessLibraryCraftVerify;
+
+
+DatabaseSetup databaseSetup = new DatabaseSetup();
+databaseSetup.Main();
+

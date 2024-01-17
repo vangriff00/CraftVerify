@@ -64,6 +64,7 @@ namespace DataAccessLibraryCraftVerify
                         try
                         {
                             var read = command.ExecuteReader();
+                            transaction.Commit();
                         }
                         catch
                         {
@@ -72,7 +73,6 @@ namespace DataAccessLibraryCraftVerify
                         }
                     }
                 }
-
             }
             return "Shit";
         }
